@@ -1,0 +1,1949 @@
+<!-- index.html - Kethumathiya Luxury Resort & Banquet Hall -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kethumathiya Banquet Hall, Pub & Restaurant - Luxury resort and banquet facilities in Yakkala, Sri Lanka">
+    <title>Kethumathiya | Luxury Resort & Banquet Hall</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --primary-gold-light: #F4E8C1;
+            --dark-bg: #0a0a0a;
+            --dark-surface: rgba(20, 20, 20, 0.85);
+            --light-bg: #faf8f3;
+            --light-surface: rgba(255, 255, 255, 0.9);
+            --text-dark: #1a1a1a;
+            --text-light: #f5f5f5;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+        }
+
+        h1, h2, h3, .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 5%;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: var(--light-surface);
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow);
+        }
+
+        body.dark-mode .navbar.scrolled {
+            background: var(--dark-surface);
+            box-shadow: var(--shadow-dark);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-gold), #B8941F);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--primary-gold), #B8941F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .theme-toggle, .mobile-menu-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: inherit;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary-gold);
+        }
+
+        .book-btn {
+            background: linear-gradient(135deg, var(--primary-gold), #B8941F);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+
+        .book-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        /* Page Sections */
+        .page-section {
+            display: none;
+            animation: fadeIn 0.6s ease-out;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -80px;
+        }
+
+        .hero-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 1;
+            max-width: 900px;
+            padding: 0 2rem;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: var(--primary-gold-light);
+            font-weight: 400;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold), #B8941F);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: 2px solid white;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--text-dark);
+            transform: translateY(-3px);
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .slider-dot.active {
+            background: var(--primary-gold);
+            transform: scale(1.2);
+        }
+
+        /* Glass Cards */
+        .glass-card {
+            background: var(--light-surface);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        body.dark-mode .glass-card {
+            background: var(--dark-surface);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: var(--shadow-dark);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        body.dark-mode .glass-card:hover {
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 0 2rem;
+        }
+
+        .section-label {
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary-gold);
+        }
+
+        /* Highlights Section */
+        .highlights {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .highlight-card {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-icon {
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .highlight-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-text {
+            color: inherit;
+            opacity: 0.8;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Pricing Page */
+        .pricing-container {
+            padding: 6rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary-gold);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: 'Popular';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--primary-gold);
+            color: white;
+            padding: 0.5rem 3rem;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .pricing-amount {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin: 1.5rem 0;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .pricing-amount span {
+            font-size: 1rem;
+            opacity: 0.7;
+            display: block;
+            margin-top: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(128,128,128,0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pricing-features li i {
+            color: var(--primary-gold);
+        }
+
+        /* Facilities Page */
+        .facilities-container {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .facility-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: start;
+            padding: 2rem;
+        }
+
+        .facility-icon {
+            min-width: 60px;
+            height: 60px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+        }
+
+        .facility-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .facility-content p {
+            opacity: 0.8;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        /* Reviews Page */
+        .reviews-container {
+            padding: 6rem 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .rating-summary {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .big-rating {
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            line-height: 1;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .stars {
+            color: var(--primary-gold);
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .review-count {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        .reviews-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .review-card {
+            padding: 2.5rem;
+            margin: 1rem;
+            display: none;
+        }
+
+        .review-card.active {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-gold), #B8941F);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .review-date {
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        .review-text {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            font-style: italic;
+        }
+
+        .review-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .review-nav button {
+            background: none;
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .review-nav button:hover {
+            background: var(--primary-gold);
+            color: white;
+        }
+
+        /* Gallery Page */
+        .gallery-container {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 1.5rem;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            opacity: 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lightbox-close:hover {
+            color: var(--primary-gold);
+            transform: rotate(90deg);
+        }
+
+        /* Contact Page */
+        .contact-container {
+            padding: 6rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details {
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .contact-text h4 {
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-text p, .contact-text a {
+            opacity: 0.8;
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .contact-text a:hover {
+            color: var(--primary-gold);
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            height: 400px;
+            box-shadow: var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Booking Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1500;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal-content {
+            background: var(--light-bg);
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            padding: 3rem;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+        }
+
+        body.dark-mode .modal-content {
+            background: var(--dark-bg);
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .modal-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: inherit;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary-gold);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(128,128,128,0.3);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: transparent;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--primary-gold), #B8941F);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .success-message.active {
+            display: block;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 4rem 5% 2rem;
+            margin-top: 4rem;
+        }
+
+        body.dark-mode .footer {
+            background: #000;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            line-height: 1.8;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-gold);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--light-surface);
+                flex-direction: column;
+                padding: 2rem;
+                transition: var(--transition);
+                gap: 1.5rem;
+            }
+
+            body.dark-mode .nav-links {
+                background: var(--dark-surface);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .masonry-grid {
+                column-count: 2;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .facility-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .masonry-grid {
+                column-count: 1;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-cta a {
+                width: 100%;
+            }
+        }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="navigateTo('home')">
+                <div class="logo-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <span class="logo-text">Kethumathiya</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" class="active" onclick="navigateTo('home')">Home</a></li>
+                <li><a href="#" onclick="navigateTo('pricing')">Pricing</a></li>
+                <li><a href="#" onclick="navigateTo('facilities')">Facilities</a></li>
+                <li><a href="#" onclick="navigateTo('reviews')">Reviews</a></li>
+                <li><a href="#" onclick="navigateTo('gallery')">Gallery</a></li>
+                <li><a href="#" onclick="navigateTo('contact')">Contact</a></li>
+                <li><button class="book-btn" onclick="openBooking()">Book Now</button></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="page-section active">
+        <div class="hero">
+            <div class="hero-slider">
+                <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920');"></div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920');"></div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1920');"></div>
+            </div>
+            
+            <div class="hero-content">
+                <p class="hero-subtitle">Welcome to Paradise</p>
+                <h1 class="hero-title">Kethumathiya<br>Banquet Hall & Resort</h1>
+                <p class="hero-description">Experience luxury and tradition in the heart of Yakkala. Premium banquet facilities, comfortable accommodations, and exquisite dining await you.</p>
+                <div class="hero-cta">
+                    <a href="#" class="btn-primary" onclick="openBooking()">Reserve Now</a>
+                    <a href="#" class="btn-secondary" onclick="navigateTo('facilities')">Explore</a>
+                </div>
+            </div>
+
+            <div class="slider-controls">
+                <div class="slider-dot active" onclick="currentSlide(1)"></div>
+                <div class="slider-dot" onclick="currentSlide(2)"></div>
+                <div class="slider-dot" onclick="currentSlide(3)"></div>
+            </div>
+        </div>
+
+        <section class="highlights">
+            <div class="section-header reveal">
+                <span class="section-label">Discover</span>
+                <h2 class="section-title">Our Specialties</h2>
+            </div>
+            
+            <div class="highlights-grid">
+                <div class="glass-card highlight-card reveal">
+                    <div class="highlight-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3 class="highlight-title">Grand Banquet Hall</h3>
+                    <p class="highlight-text">Elegant spaces for weddings, corporate events, and celebrations with state-of-the-art facilities and catering services.</p>
+                </div>
+
+                <div class="glass-card highlight-card reveal">
+                    <div class="highlight-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3 class="highlight-title">Luxury Rooms</h3>
+                    <p class="highlight-text">Comfortable accommodations with modern amenities, perfect for wedding guests or weekend getaways.</p>
+                </div>
+
+                <div class="glass-card highlight-card reveal">
+                    <div class="highlight-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="highlight-title">Pub & Restaurant</h3>
+                    <p class="highlight-text">Authentic Sri Lankan cuisine and international dishes crafted by expert chefs in a sophisticated ambiance.</p>
+                </div>
+
+                <div class="glass-card highlight-card reveal">
+                    <div class="highlight-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3 class="highlight-title">Kids Friendly</h3>
+                    <p class="highlight-text">Specialized birthday party packages and safe play areas designed for memorable children's celebrations.</p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="page-section">
+        <div class="pricing-container">
+            <div class="section-header reveal">
+                <span class="section-label">Investment</span>
+                <h2 class="section-title">Our Packages</h2>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="glass-card pricing-card reveal">
+                    <h3>Deluxe Room</h3>
+                    <div class="pricing-amount">
+                        LKR 14,594
+                        <span>per night</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> King-size bed</li>
+                        <li><i class="fas fa-check"></i> AC & WiFi</li>
+                        <li><i class="fas fa-check"></i> Breakfast included</li>
+                        <li><i class="fas fa-check"></i> Room service</li>
+                        <li><i class="fas fa-check"></i> Mountain view</li>
+                    </ul>
+                    <button class="btn-primary" onclick="openBooking()" style="width: 100%;">Book Room</button>
+                </div>
+
+                <div class="glass-card pricing-card featured reveal">
+                    <h3>Banquet Package</h3>
+                    <div class="pricing-amount">
+                        Custom
+                        <span>per event</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 200+ guest capacity</li>
+                        <li><i class="fas fa-check"></i> Full decoration</li>
+                        <li><i class="fas fa-check"></i> Catering service</li>
+                        <li><i class="fas fa-check"></i> Sound system</li>
+                        <li><i class="fas fa-check"></i> Bridal room</li>
+                    </ul>
+                    <button class="btn-primary" onclick="openBooking()" style="width: 100%;">Inquire Now</button>
+                </div>
+
+                <div class="glass-card pricing-card reveal">
+                    <h3>Restaurant</h3>
+                    <div class="pricing-amount">
+                        LKR 2,500+
+                        <span>per person</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Buffet options</li>
+                        <li><i class="fas fa-check"></i> À la carte menu</li>
+                        <li><i class="fas fa-check"></i> Bar access</li>
+                        <li><i class="fas fa-check"></i> Private dining</li>
+                        <li><i class="fas fa-check"></i> Live cooking stations</li>
+                    </ul>
+                    <button class="btn-primary" onclick="openBooking()" style="width: 100%;">Reserve Table</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="page-section">
+        <div class="facilities-container">
+            <div class="section-header reveal">
+                <span class="section-label">Amenities</span>
+                <h2 class="section-title">Facilities</h2>
+            </div>
+
+            <div class="facility-grid">
+                <div class="glass-card facility-card reveal">
+                    <div class="facility-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="facility-content">
+                        <h3>Banquet Hall</h3>
+                        <p>Spacious, customizable halls with modern lighting, sound systems, and elegant décor options for any occasion.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card facility-card reveal">
+                    <div class="facility-icon">
+                        <i class="fas fa-wine-glass-alt"></i>
+                    </div>
+                    <div class="facility-content">
+                        <h3>Pub & Restaurant</h3>
+                        <p>Fully licensed bar and restaurant serving premium beverages, cocktails, and gourmet meals in a relaxing atmosphere.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card facility-card reveal">
+                    <div class="facility-icon">
+                        <i class="fas fa-wheelchair"></i>
+                    </div>
+                    <div class="facility-content">
+                        <h3>Wheelchair Accessible</h3>
+                        <p>Ramp access, spacious elevators, and specially designed restrooms ensure comfort for all guests.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card facility-card reveal">
+                    <div class="facility-icon">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <div class="facility-content">
+                        <h3>Free Parking</h3>
+                        <p>Secure, spacious parking area with 24/7 security monitoring and valet service available for events.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card facility-card reveal">
+                    <div class="facility-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <div class="facility-content">
+                        <h3>Kids Birthday Friendly</h3>
+                        <p>Themed decoration packages, entertainment options, special kids menu, and dedicated party coordinators.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card facility-card reveal">
+                    <div class="facility-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="facility-content">
+                        <h3>Card Payments</h3>
+                        <p>Accept all major credit and debit cards, contactless payments, and digital wallets for your convenience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="page-section">
+        <div class="reviews-container">
+            <div class="section-header reveal">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-title">Guest Reviews</h2>
+            </div>
+
+            <div class="rating-summary reveal">
+                <div class="big-rating">4.6</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="review-count">Based on 92 Google Reviews</p>
+            </div>
+
+            <div class="reviews-slider reveal">
+                <div class="glass-card review-card active">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">SK</div>
+                            <div>
+                                <div class="reviewer-name">Sanjeev Kumar</div>
+                                <div class="review-date">2 weeks ago</div>
+                            </div>
+                        </div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-text">"Excellent venue for my daughter's wedding. The banquet hall was beautifully decorated and the food was outstanding. Staff was very cooperative and professional. Highly recommended!"</p>
+                </div>
+
+                <div class="glass-card review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">AP</div>
+                            <div>
+                                <div class="reviewer-name">Amali Perera</div>
+                                <div class="review-date">1 month ago</div>
+                            </div>
+                        </div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-text">"Celebrated my son's birthday here. They have amazing packages for kids parties. The food was delicious and the venue was perfect. Will definitely come back!"</p>
+                </div>
+
+                <div class="glass-card review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">RF</div>
+                            <div>
+                                <div class="reviewer-name">Rajith Fernando</div>
+                                <div class="review-date">2 months ago</div>
+                            </div>
+                        </div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-text">"Good pub atmosphere and great selection of drinks. The restaurant serves authentic Sri Lankan cuisine. Rooms are clean and comfortable. Value for money."</p>
+                </div>
+
+                <div class="review-nav">
+                    <button onclick="changeReview(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button onclick="changeReview(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="page-section">
+        <div class="gallery-container">
+            <div class="section-header reveal">
+                <span class="section-label">Portfolio</span>
+                <h2 class="section-title">Gallery</h2>
+            </div>
+
+            <div class="masonry-grid">
+                <div class="gallery-item reveal" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600" alt="Wedding Setup">
+                    <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=600" alt="Resort View">
+                    <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600" alt="Restaurant">
+                    <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600" alt="Banquet Hall">
+                    <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600" alt="Hotel Room">
+                    <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1529543544277-750e1a4c8fde?w=600" alt="Pool Area">
+                    <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+            <span class="lightbox-close">&times;</span>
+            <img src="" alt="Gallery Image" id="lightboxImg">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="page-section">
+        <div class="contact-container">
+            <div class="section-header reveal">
+                <span class="section-label">Connect</span>
+                <h2 class="section-title">Contact Us</h2>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h2>Get in Touch</h2>
+                    <p style="opacity: 0.8; line-height: 1.8; margin-bottom: 2rem;">
+                        Whether you're planning a grand wedding, corporate event, or looking for a weekend getaway, we're here to make your experience memorable.
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Address</h4>
+                                <p>Aluthgama-Wigoda Road,<br>Bemmulla Rd, Yakkala,<br>Sri Lanka</p>
+                                <small style="opacity: 0.6;">Plus Code: 425M+P6</small>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <a href="tel:+94332292246">0332 292 246</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="mailto:info@kethumathiya.lk">info@kethumathiya.lk</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Hours</h4>
+                                <p>Open 24 Hours<br>Restaurant: 6 AM - 11 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary" onclick="openBooking()" style="margin-top: 2rem;">
+                        <i class="fas fa-calendar-check"></i> Make a Reservation
+                    </button>
+                </div>
+
+                <div class="map-container reveal">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.458783403!2d80.0333!3d7.1167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDcnMDAuMCJOIDgwwrAwMSc2MC4wIkU!5e0!3m2!1sen!2slk!4v1" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Kethumathiya</h3>
+                <p>Premium banquet hall, resort, and restaurant in Yakkala, Sri Lanka. Creating memorable experiences since 2010.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#" onclick="navigateTo('home')">Home</a></p>
+                <p><a href="#" onclick="navigateTo('pricing')">Pricing</a></p>
+                <p><a href="#" onclick="navigateTo('facilities')">Facilities</a></p>
+                <p><a href="#" onclick="openBooking()">Book Now</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-phone"></i> 0332 292 246</p>
+                <p><i class="fas fa-map-marker-alt"></i> Yakkala, Sri Lanka</p>
+                <p><i class="fas fa-envelope"></i> info@kethumathiya.lk</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Admin</h3>
+                <p><a href="admin.html" target="_blank">Staff Login</a></p>
+                <p>Manage bookings and view dashboard</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Kethumathiya Banquet Hall, Pub & Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeBooking()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div id="bookingForm">
+                <div class="modal-header">
+                    <h2>Make a Reservation</h2>
+                    <p>Fill in your details and we'll confirm shortly</p>
+                </div>
+
+                <form onsubmit="submitBooking(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Check-in Date</label>
+                            <input type="date" id="checkIn" required min="">
+                        </div>
+                        <div class="form-group">
+                            <label>Check-out Date</label>
+                            <input type="date" id="checkOut" required min="">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Number of Guests</label>
+                            <input type="number" id="guests" min="1" max="500" required placeholder="Enter number">
+                        </div>
+                        <div class="form-group">
+                            <label>Type</label>
+                            <select id="bookingType" required>
+                                <option value="">Select Type</option>
+                                <option value="room">Deluxe Room</option>
+                                <option value="banquet">Banquet Hall</option>
+                                <option value="restaurant">Restaurant Table</option>
+                                <option value="event">Special Event</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="fullName" required placeholder="Your name">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" id="phone" required placeholder="Contact number">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="email" required placeholder="your@email.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Special Requests</label>
+                        <textarea id="requests" rows="3" placeholder="Any special requirements..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-calendar-check"></i> Confirm Booking
+                    </button>
+                </form>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                <div class="success-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h2>Booking Successful!</h2>
+                <p>Thank you for choosing Kethumathiya. We have received your reservation request and will contact you shortly to confirm.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">Booking Reference: <span id="bookingRef"></span></p>
+                <button class="btn-primary" onclick="closeBooking()" style="margin-top: 2rem;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation System
+        function navigateTo(pageId) {
+            // Hide all sections
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show target section
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update nav links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Find and activate the corresponding nav link
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                if(link.getAttribute('onclick').includes(pageId)) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Close mobile menu if open
+            document.getElementById('navLinks').classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // Trigger reveal animations
+            setTimeout(checkReveal, 100);
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Theme Toggle
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.getElementById('themeIcon');
+            
+            if(document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme
+        if(localStorage.getItem('theme') === 'dark') {
+            toggleTheme();
+        }
+
+        // Hero Slider
+        let slideIndex = 1;
+        
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+
+        function showSlide(n) {
+            const slides = document.getElementsByClassName('slide');
+            const dots = document.getElementsByClassName('slider-dot');
+            
+            if(n > slides.length) slideIndex = 1;
+            if(n < 1) slideIndex = slides.length;
+            
+            for(let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            
+            for(let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove('active');
+            }
+            
+            slides[slideIndex - 1].classList.add('active');
+            dots[slideIndex - 1].classList.add('active');
+        }
+
+        // Auto-advance slides
+        setInterval(() => {
+            slideIndex++;
+            showSlide(slideIndex);
+        }, 5000);
+
+        // Reviews Slider
+        let reviewIndex = 0;
+        const reviews = document.querySelectorAll('.review-card');
+
+        function changeReview(direction) {
+            reviews[reviewIndex].classList.remove('active');
+            reviewIndex += direction;
+            
+            if(reviewIndex >= reviews.length) reviewIndex = 0;
+            if(reviewIndex < 0) reviewIndex = reviews.length - 1;
+            
+            reviews[reviewIndex].classList.add('active');
+        }
+
+        // Lightbox
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            
+            lightboxImg.src = img.src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // Booking Modal
+        function openBooking() {
+            document.getElementById('bookingModal').classList.add('active');
+            document.getElementById('bookingForm').style.display = 'block';
+            document.getElementById('successMessage').classList.remove('active');
+            
+            // Set min date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('checkIn').min = today;
+            document.getElementById('checkOut').min = today;
+        }
+
+        function closeBooking() {
+            document.getElementById('bookingModal').classList.remove('active');
+            // Reset form after delay
+            setTimeout(() => {
+                document.querySelector('#bookingForm form').reset();
+            }, 300);
+        }
+
+        // Booking Form Submission
+        function submitBooking(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const booking = {
+                id: 'BK' + Date.now(),
+                name: document.getElementById('fullName').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                checkIn: document.getElementById('checkIn').value,
+                checkOut: document.getElementById('checkOut').value,
+                guests: document.getElementById('guests').value,
+                type: document.getElementById('bookingType').value,
+                requests: document.getElementById('requests').value,
+                status: 'Pending',
+                createdAt: new Date().toISOString()
+            };
+            
+            // Save to LocalStorage
+            let bookings = JSON.parse(localStorage.getItem('kethumathiya_bookings') || '[]');
+            bookings.push(booking);
+            localStorage.setItem('kethumathiya_bookings', JSON.stringify(bookings));
+            
+            // Show success
+            document.getElementById('bookingForm').style.display = 'none';
+            document.getElementById('bookingRef').textContent = booking.id;
+            document.getElementById('successMessage').classList.add('active');
+        }
+
+        // Scroll Reveal Animation
+        function checkReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if(elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkReveal);
+        window.addEventListener('load', checkReveal);
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if(window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if(event.target == modal) {
+                closeBooking();
+            }
+        }
+    </script>
+</body>
+</html>
